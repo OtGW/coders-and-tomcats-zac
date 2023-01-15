@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react'
-import { useInterval } from '@mantine/hooks'
-import { createStyles, Button, Progress, Tooltip, Stack } from '@mantine/core'
-import { ref, update, push, increment } from 'firebase/database'
-import { database, useAuthState } from '../hooks/Firebase'
-import './Styles.css'
-import VoteButtonCoders from './VoteButtonCoders.js'
-import VoteButtonTomcats from './VoteButtonTomcats.js'
+import React, { useState, useEffect } from "react"
+import { useInterval } from "@mantine/hooks"
+import { createStyles, Button, Progress, Tooltip, Stack } from "@mantine/core"
+import { ref, update, push, increment } from "firebase/database"
+import { database, useAuthState } from "../hooks/Firebase"
+import "./Styles.css"
+import VoteButtonCoders from "./VoteButtonCoders.js"
+import VoteButtonTomcats from "./VoteButtonTomcats.js"
 
 const Voting = ({ contestNumber }) => {
   const [userVoted, setUserVoted] = useState(false)
-  const { data, user, isAuthenticated } = useAuthState() //why {} not []?
+  const { data, user, isAuthenticated } = useAuthState()
   const [progressCoders, setProgressCoders] = useState(0)
   const [progressCats, setProgressCats] = useState(0)
   const [loadedCat, setLoadedCat] = useState(false)
@@ -26,7 +26,7 @@ const Voting = ({ contestNumber }) => {
         setLoadedCoder(true)
         return 0
       }),
-    20,
+    20
   )
   const intervalCats = useInterval(
     () =>
@@ -39,9 +39,8 @@ const Voting = ({ contestNumber }) => {
         setLoadedCat(true)
         return 0
       }),
-    20,
+    20
   )
-  //This comment is just to test folder name change
 
   //Have they voted?
   useEffect(() => {
@@ -60,7 +59,7 @@ const Voting = ({ contestNumber }) => {
           setUserVoted(false)
         }
       } else {
-        setUserVoted(false) //Not 100% sure what this entails
+        setUserVoted(false)
       }
     }
   }, [isAuthenticated, data, user, contestNumber])
@@ -76,7 +75,7 @@ const Voting = ({ contestNumber }) => {
     const contestRef = ref(database, `/Contests/${contestNumber}`)
 
     const updates = {}
-    updates[`/${coders ? 'coders' : 'tomcats'}`] = increment(1)
+    updates[`/${coders ? "coders" : "tomcats"}`] = increment(1)
     updates[`/votes/${user.uid}`] = true
 
     update(contestRef, updates)

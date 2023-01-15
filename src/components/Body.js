@@ -37,7 +37,6 @@ const Body = () => {
         <Voting contestNumber={1} />
       </div>
       <Image src="Ugly website photo dump\USE THESE PHOTOS\MeerkatShopped\Photo2Option1.jpg" />
-      {/* <Image src="Ugly website photo dump\USE THESE PHOTOS\MeerkatShopped\Photo2Option2.jpg" /> */}
       <div>
         <Voting contestNumber={2} />
       </div>
