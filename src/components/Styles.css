@@ -1,0 +1,70 @@
+/* className and id weren't working and for the life of me I couldn't figure out why
+so yeah some of these selectors look shitty but whatever */
+/*Also I know these values should not be hardcoded, I just ran out of time to account for responsive design*/
+
+#root > div > div > main > div > div > div > div:nth-child(1) {
+  /*this is for "You've heard of sorority girls and meerkats..."*/
+  margin-top: 50px;
+}
+
+#root
+  > div
+  > div
+  > main
+  > div
+  > div
+  > div
+  > div.styles_wordart__UPt3m.styles_slate__1ICOX {
+  /*this is for "Have you ever asked yourself, why can't that be me??"*/
+  margin-top: 50px;
+}
+
+#root > div > div > main > div > div > div > div:nth-child(4) {
+  /*this is for "Now it's time to vote on...Coders and Tomcats!"*/
+  margin-top: 50px;
+  padding-top: 50px;
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+}
+
+.voteButton {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  gap: 200px;
+  padding-bottom: 200px;
+}
+
+.head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: stretch;
+}
+
+/* .head > Image {
+  height: 100%;
+  width: auto;
+} */
+
+.foot {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+}
+
+/*I have no fucking idea why it made me use the relative path here. Or why I couldn't do this any number of better ways specific to React, that failed when I tried them.*/
+/* background-image: url("C:\Users\night\code\UglyWebsiteContest\zack-shitty-project\public\Ugly website photo dump\USE THESE PHOTOS\DumbBackground.jpg");*/
+
+/* .body {
+  background-image: url("C:\Users\night\code\UglyWebsiteContest\zac-ugly-project\public\Ugly website photo dump\USE THESE PHOTOS\DumbBackground.jpg");
+}
+
+.backgroundStyling {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+} */
