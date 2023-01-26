@@ -1,6 +1,8 @@
 import React from "react"
 import { database, useAuthState } from "../hooks/Firebase"
 
+// TODO: Finish the Results component+functionality
+
 const Results = (contestNumber) => {
   const { data } = useAuthState()
   let coderWin = 0

@@ -1,5 +1,5 @@
-/* className and id weren't working and for the life of me I couldn't figure out why
-so yeah some of these selectors look shitty but whatever */
+/* className and id weren't working and I couldn't figure out why
+so some of these selectors look bad */
 /*Also I know these values should not be hardcoded, I just ran out of time to account for responsive design*/
 
 #root > div > div > main > div > div > div > div:nth-child(1) {
@@ -41,30 +41,8 @@ so yeah some of these selectors look shitty but whatever */
   justify-items: stretch;
 }
 
-/* .head > Image {
-  height: 100%;
-  width: auto;
-} */
-
 .foot {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
 }
-
-/*I have no fucking idea why it made me use the relative path here. Or why I couldn't do this any number of better ways specific to React, that failed when I tried them.*/
-/* background-image: url("C:\Users\night\code\UglyWebsiteContest\zack-shitty-project\public\Ugly website photo dump\USE THESE PHOTOS\DumbBackground.jpg");*/
-
-/* .body {
-  background-image: url("C:\Users\night\code\UglyWebsiteContest\zac-ugly-project\public\Ugly website photo dump\USE THESE PHOTOS\DumbBackground.jpg");
-}
-
-.backgroundStyling {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 0;
-} */
