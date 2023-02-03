@@ -13,12 +13,14 @@ const ResultsDisplay = ({ winner }) => {
       size="auto"
       onClose={() => setOpened(false)}
     >
-      This contest has ended. The winner is {winner}!
+      This contest has ended. {winner}
       {/*image depending on winner, sound, confetti effect*/}
     </Modal>
   )
 
   //event listener: detect new login, setOpened(true)
+  //^ possibly useEffect in LoginButton, setOpened(true)
+  //Also when page reloads && isAuthenticated/auth - getAuth()
 }
 
 export default ResultsDisplay
