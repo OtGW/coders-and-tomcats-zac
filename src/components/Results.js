@@ -55,6 +55,7 @@ const Results = () => {
       let coderData
       let tomcatData
       const coderContestRef = ref(database, `/Contests/${i}/coders`)
+      //^Put these in the Firebase custom Hook?
       onValue(coderContestRef, (snapshot) => {
         coderData = snapshot.val()
       })
