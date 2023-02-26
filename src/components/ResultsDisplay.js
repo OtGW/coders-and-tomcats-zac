@@ -1,7 +1,5 @@
 import React, { useState } from "react"
 import { Modal } from "@mantine/core"
-import { ref, update, push, increment } from "firebase/database"
-import { database, useAuthState } from "../hooks/Firebase"
 
 const ResultsDisplay = ({ winner }) => {
   const [opened, setOpened] = useState(true)
@@ -14,7 +12,7 @@ const ResultsDisplay = ({ winner }) => {
       onClose={() => setOpened(false)}
     >
       This contest has ended. {winner}
-      {/*image depending on winner, sound, confetti effect*/}
+      {/*TODO: image depending on winner, sound, confetti effect*/}
     </Modal>
   )
 }
