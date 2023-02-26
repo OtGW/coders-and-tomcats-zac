@@ -30,22 +30,6 @@ const Results = () => {
     }
   }, [isAuthenticated])
 
-  //left this here
-  // const contestOver = () => {
-  //   const timeLeft = () => {
-  //     const currentTime = Date.now()
-  //     console.log(currentTime)
-  //     const endOfContest = new Date(1669914000)
-  //     console.log(endOfContest)
-  //     return endOfContest - currentTime
-  //   }
-  //   if (timeLeft > 0) {
-  //     return false
-  //   } else {
-  //     return true
-  //   }
-  // }
-
   //TODO: Bug where sometimes it updates coderWins, tomcatWins, and others not; also It's a tie! vs Coders win! - Weirdly, sometimes refreshing doesn't work but adding comments like this one in the code finally gets it to update those counts.
   useEffect(() => {
     let coderWin = 0
