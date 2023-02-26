@@ -33,25 +33,31 @@ const Results = () => {
     let tomcatWin = 0
     //TODO: get length/size of # of contests in database instead of hardcoding i < 5
     for (let i = 1; i < 5; i++) {
-      let coderData
-      let tomcatData
-      const coderContestRef = ref(database, `/Contests/${i}/coders`)
-      //^Put these in the Firebase custom Hook?
-      onValue(coderContestRef, (snapshot) => {
-        coderData = snapshot.val()
-      })
-      const tomcatContestRef = ref(database, `/Contests/${i}/tomcats`)
-      onValue(tomcatContestRef, (snapshot) => {
-        tomcatData = snapshot.val()
-      })
-      if (coderData > tomcatData) {
+      if (data[i].coders > data[i].tomcats) {
         coderWin++
-        //       setCoderWin((coderWin) => coderWin + 1)
-      } else if (coderData < tomcatData) {
+      } else if (data[i].coders < data[i].tomcats) {
         tomcatWin++
-        //       setTomcatWin((tomcatWin) => tomcatWin + 1)
       } else {
       }
+      // let coderData
+      // let tomcatData
+      // const coderContestRef = ref(database, `/Contests/${i}/coders`)
+      // //^Put these in the Firebase custom Hook?
+      // onValue(coderContestRef, (snapshot) => {
+      //   coderData = snapshot.val()
+      // })
+      // const tomcatContestRef = ref(database, `/Contests/${i}/tomcats`)
+      // onValue(tomcatContestRef, (snapshot) => {
+      //   tomcatData = snapshot.val()
+      // })
+      // if (coderData > tomcatData) {
+      //   coderWin++
+      //   //       setCoderWin((coderWin) => coderWin + 1)
+      // } else if (coderData < tomcatData) {
+      //   tomcatWin++
+      //   //       setTomcatWin((tomcatWin) => tomcatWin + 1)
+      // } else {
+      // }
     }
     if (coderWin > tomcatWin) {
       setWinner("The winner is Coders!")
@@ -60,7 +66,7 @@ const Results = () => {
     } else {
       setWinner("It's a tie!")
     }
-  }, [])
+  }, [data])
 
   if (contestOver && isAuthenticated) {
     return <ResultsDisplay winner={winner} />
