@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { ref, onValue } from "firebase/database"
 import { database, useAuthState } from "../hooks/Firebase"
 import ResultsDisplay from "./ResultsDisplay.js"
+import { getValue } from "@testing-library/user-event/dist/utils"
 
 //TODO: Bug where sometimes it updates coderWin, tomcatWin, and others not; also It's a tie! vs Coders win! - Weirdly, sometimes refreshing doesn't work but adding comments like this one in the code finally gets it to update those counts.
 
@@ -33,9 +34,10 @@ const Results = () => {
     let tomcatWin = 0
     //TODO: get length/size of # of contests in database instead of hardcoding i < 5
     for (let i = 1; i < 5; i++) {
-      if (data[i].coders > data[i].tomcats) {
+      if (data[i].coders[getValue] > data[i].tomcats[getValue]) {
+        //TODO!! - data[i].coders.value? valueOf?
         coderWin++
-      } else if (data[i].coders < data[i].tomcats) {
+      } else if (data[i].coders[getValue] < data[i].tomcats[getValue]) {
         tomcatWin++
       } else {
       }
