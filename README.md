@@ -1,5 +1,6 @@
 This side project was made as an entry for the "Ugly Website Design Competition" - a non-mandatory competition while I attended the coding bootcamp Tech Elevator. The visual aesthetic is intentionally an eyesore (for example the logo in the upper left), in line with the theme of the competition. I taught myself React to create this project (it wasn't part of the Tech Elevator curriculum).
 I am still adding features (Results in particular).
+The faces in the (intentionally off-kilter) edited images for each contest are those of my former classmates and instructors, taken from their Linkedin profiles. They have all seen the website and have consented to the use of their faces.
 
 Link to current build hosted on Netlify = https://coders-and-tomcats.netlify.app/
 
