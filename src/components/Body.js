@@ -1,5 +1,5 @@
-import React, { useEffect } from "react"
-import { Stack, StylesApiProvider } from "@mantine/core"
+import React from "react"
+import { Stack } from "@mantine/core"
 import WordArt from "react-wordart"
 import { Image } from "@mantine/core"
 import "./Styles.css"

@@ -1,8 +1,7 @@
-import React from 'react'
-import { Footer as MantineFooter, Tooltip } from '@mantine/core'
-import { Image } from '@mantine/core'
-import { useHover } from '@mantine/hooks'
-import './Styles.css'
+import React from "react"
+import { Footer as MantineFooter, Tooltip } from "@mantine/core"
+import { Image } from "@mantine/core"
+import "./Styles.css"
 
 const Footer = () => {
   return (

@@ -2,17 +2,11 @@ import React, { useState, useEffect } from "react"
 import { ref, onValue } from "firebase/database"
 import { database, useAuthState } from "../hooks/Firebase"
 import ResultsDisplay from "./ResultsDisplay.js"
-import { getValue } from "@testing-library/user-event/dist/utils"
-
-//TODO: Bug where sometimes it updates coderWin, tomcatWin, and others not; also It's a tie! vs Coders win! - Weirdly, sometimes refreshing doesn't work but adding comments like this one in the code finally gets it to update those counts.
 
 const Results = () => {
-  const { user, data, isAuthenticated } = useAuthState()
+  const { data, isAuthenticated } = useAuthState()
   const [contestOver, setContestOver] = useState(false)
   const [winner, setWinner] = useState("")
-  //TODO: put "winner" in Firebase hook or directly in database?
-
-  //memo vs useMemo vs useCallback vs useEffect vs useRef
 
   useEffect(() => {
     const timeLeft = () => {
@@ -34,9 +28,19 @@ const Results = () => {
     let tomcatWin = 0
     //TODO: get length/size of # of contests in database instead of hardcoding i < 5
     for (let i = 1; i < 5; i++) {
-      if (data[i].coders[getValue] > data[i].tomcats[getValue]) {
+      let coderData
+      let tomcatData
+      const coderContestRef = ref(database, `/Contests/${i}/coders`)
+      onValue(coderContestRef, (snapshot) => {
+        coderData = snapshot.val()
+      })
+      const tomcatContestRef = ref(database, `/Contests/${i}/tomcats`)
+      onValue(tomcatContestRef, (snapshot) => {
+        tomcatData = snapshot.val()
+      })
+      if (coderData > tomcatData) {
         coderWin++
-      } else if (data[i].coders[getValue] < data[i].tomcats[getValue]) {
+      } else if (coderData < tomcatData) {
         tomcatWin++
       } else {
       }

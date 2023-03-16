@@ -9,7 +9,7 @@ import "./Styles.css"
 const Layout = ({ state }) => {
   return (
     <AppShell header={<Header />} footer={<Footer />}>
-      <Results /> {/*May move this to App.js*/}
+      <Results />
       <Grid justify="center">
         <Grid.Col sm={12} md={8} lg={6} xl={6}>
           <Body />

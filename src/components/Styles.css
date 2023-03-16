@@ -1,6 +1,5 @@
 /* className and id weren't working and I couldn't figure out why
-so some of these selectors look bad */
-/*Also I know these values should not be hardcoded, I just ran out of time to account for responsive design*/
+so some of these selectors look awkward */
 
 #root > div > div > main > div > div > div > div:nth-child(1) {
   /*this is for "You've heard of sorority girls and meerkats..."*/

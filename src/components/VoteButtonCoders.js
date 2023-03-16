@@ -1,8 +1,5 @@
-import { useState, useEffect } from "react"
-import { useInterval } from "@mantine/hooks"
 import { createStyles, Button, Progress } from "@mantine/core"
-import { ref, update, push, increment } from "firebase/database"
-import { database, useAuthState } from "../hooks/Firebase"
+
 import "./Styles.css"
 
 const useStyles = createStyles(() => ({
