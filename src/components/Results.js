@@ -35,31 +35,11 @@ const Results = () => {
     //TODO: get length/size of # of contests in database instead of hardcoding i < 5
     for (let i = 1; i < 5; i++) {
       if (data[i].coders[getValue] > data[i].tomcats[getValue]) {
-        //TODO!! - data[i].coders.value? valueOf?
         coderWin++
       } else if (data[i].coders[getValue] < data[i].tomcats[getValue]) {
         tomcatWin++
       } else {
       }
-      // let coderData
-      // let tomcatData
-      // const coderContestRef = ref(database, `/Contests/${i}/coders`)
-      // //^Put these in the Firebase custom Hook?
-      // onValue(coderContestRef, (snapshot) => {
-      //   coderData = snapshot.val()
-      // })
-      // const tomcatContestRef = ref(database, `/Contests/${i}/tomcats`)
-      // onValue(tomcatContestRef, (snapshot) => {
-      //   tomcatData = snapshot.val()
-      // })
-      // if (coderData > tomcatData) {
-      //   coderWin++
-      //   //       setCoderWin((coderWin) => coderWin + 1)
-      // } else if (coderData < tomcatData) {
-      //   tomcatWin++
-      //   //       setTomcatWin((tomcatWin) => tomcatWin + 1)
-      // } else {
-      // }
     }
     if (coderWin > tomcatWin) {
       setWinner("The winner is Coders!")
@@ -78,10 +58,6 @@ const Results = () => {
 export default Results
 
 //TODO: create new component for individual contestResultsDisplay (starter code below)
-//This is making me think I somehow got the order of inheritance wrong. If I
-//want to use logic here in another dumb display component, I couldn't
-//return that component below right? Bc then it'd be grouped together
-//with the modal; I'd want it ultimately passed to the body
 // if (!data[contestNumber].open) {
 // return <div> This contest has ended the winner is {Winner()}</div>
 // } else {
